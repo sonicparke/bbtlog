@@ -5,10 +5,10 @@
     angular.module('app', [
         /* Shared modules */
         'app.core',
-
+        'app.home',
+        'firebase',
+        
         /* Feature areas */
-        'app.login',
-        'app.layout',
         'app.feature'
     ]).config(config);
 
@@ -20,11 +20,14 @@
 
 
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        $httpProvider.interceptors.push('AuthInterceptor');
-
-
 
         $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/home/home.html',
+                controller: 'Home',
+                controllerAs: 'home'
+            })
             .state('feature', {
                 url: '/feature',
                 templateUrl: 'app/feature/feature.html',

@@ -1,0 +1,43 @@
+<div>
+    <!--<sign-out class="pull-right btn-inverse"></sign-out>
+    <section class="menu container">
+        <div ng-loader ng-show="vm.showLoader"></div>
+        <nav class="row">
+            <ul class="list-unstyled">
+                <li class="col-md-4 col-sm-12" ng-repeat="item in vm.MenuItems">
+                    <a class="btn btn-block btn-inverse clearfix" href="{{item.Url}}" target="_blank">
+                        <i class="fa fa-{{item.Icon}} fa-3x pull-left"></i>
+                        <div class="menuText">
+                            {{item.Title}} <br/>
+                            <small>{{item.SubTitle}}</small>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>-->
+    
+    <h1>PushUp Log</h1>
+    <form name="pushUpForm">
+        <!-- Text input-->
+        <div class="form-group">
+            <div class="col-md-5">
+                <input id="qty" name="qty" type="text" ng-model="home.pushUp.Qty" placeholder="How Many?" class="form-control input-md" required=""> 
+            </div>
+            <div class="col-md-5">
+                <input id="date" name="date" type="text" ng-model="home.pushUp.date" class="form-control input-md"> 
+            </div>
+        </div>
+        <button class="btn btn-primary" type="button" ng-click="home.AddPushpUps(home.pushUp)">Add PushUps</button>
+    </form>
+    
+    <h3>Firebase Data:</h3>
+    <div>
+        <ul>
+            <li ng-repeat="item in home.pushUps">{{item}}</li>
+        </ul>
+    </div>
+
+</div>
+
+
